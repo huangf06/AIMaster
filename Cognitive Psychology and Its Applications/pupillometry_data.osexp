@@ -1,0 +1,99 @@
+---
+API: 2.1
+OpenSesame: 3.3.8
+Platform: nt
+---
+set width 1024
+set uniform_coordinates yes
+set title "New experiment"
+set subject_parity even
+set subject_nr 0
+set start experiment
+set sound_sample_size -16
+set sound_freq 48000
+set sound_channels 2
+set sound_buf_size 1024
+set round_decimals 2
+set height 768
+set fullscreen no
+set form_clicks no
+set foreground white
+set font_underline no
+set font_size 18
+set font_italic no
+set font_family mono
+set font_bold no
+set experiment_path "C:\\Users\\Josh\\Desktop\\Josh work\\Courses\\Research toolbox"
+set disable_garbage_collection yes
+set description "The main experiment item"
+set coordinates uniform
+set compensation 0
+set canvas_backend xpyriment
+set background black
+
+define inline_script create_data
+	set description "Executes Python code"
+	___run__
+	import random
+	import numpy
+	
+	rts = []
+	errors = []
+	subjects = []
+	final_stims = []
+	backgrounds = []
+	pupil_sizes = []
+	target_sides = []
+	
+	for sub in range(1,25):
+		sub_var = random.randint(0,400)
+		conditions = ['white_left_targ']*10 + ['white_right_targ']*10 + ['white_left_foil']*10 + ['white_right_foil']*10 + ['black_left_targ']*10 + ['black_right_targ']*10 + ['black_left_foil']*10 + ['black_right_foil']*10
+		
+		random.shuffle(conditions)
+	
+		for i in range(0,80):
+			subjects.append(sub)
+			nr = random.randint(0,100)
+			if 'foil' in conditions[i]:
+				rts.append(round(numpy.random.normal(600,50,1)[0]+sub_var,2))
+				if nr>78:
+					errors.append(1)
+				else:
+					errors.append(0)
+				target_sides.append('none')
+				backgrounds.append('none')
+				pupil_sizes.append(round(numpy.random.normal(700,100,1)[0],2))
+				final_stims.append('foil')
+			else:
+				rts.append(round(numpy.random.normal(525,50,1)[0]+sub_var,2))
+				if nr>88:
+					errors.append(1)
+				else:
+					errors.append(0)
+				final_stims.append('target')
+				if 'left' in conditions[i]:
+					target_sides.append('left')
+				else:
+					target_sides.append('right')			
+				if 'white' in conditions[i]:
+					backgrounds.append('white')
+					pupil_sizes.append(round(numpy.random.normal(400,190,1)[0],2))
+	
+				else:
+					backgrounds.append('black')
+					pupil_sizes.append(round(numpy.random.normal(900,340,1)[0],2))
+	
+	
+	f = open(r'YOUR\PATH\HERE\data.txt', "w")
+	f.write('subject, final_stimulus, target_side, target_background, RT, error, pupil_size\n')
+	for i in range(0,len(subjects)):
+		f.write(str(subjects[i])+','+final_stims[i]+','+target_sides[i]+','+backgrounds[i]+','+str(rts[i])+','+str(errors[i])+','+str(pupil_sizes[i])+'\n')
+	f.close()
+	__end__
+	set _prepare ""
+
+define sequence experiment
+	set flush_keyboard yes
+	set description "Runs a number of items in sequence"
+	run create_data always
+
