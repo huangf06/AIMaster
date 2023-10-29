@@ -1,0 +1,174 @@
+library(ggplot2) # these libraries allow us to use the functions with which#
+library(plyr)    # to make our plots.#
+# First, we define a working directory:#
+setwd('/Users/huangfei/Downloads/ca')#
+# And then load in our datafile:#
+data <- read.csv('data_21_09.txt')#
+# Here are the mean RTs and proportion of errors, based on raw data:#
+mean(data$RT)#
+mean(data$error)#
+#--------------------------------------------#
+# PART ONE: cleaning up the data#
+# Before we inspect our RTs, we want to remove bad trials.#
+# That is, incorrectly answered trials and very atypical trials.#
+data <- data[data$error == 0,] # This excludes errors.#
+# Let's mark trials for which the RT is beyond 2.5 SDs as atypical.#
+# This means we first have to calculate that border, both above and#
+# below the average:#
+outlier1 <- mean(data$RT) + 2.5 * sd(data$RT)#
+outlier2 <- mean(data$RT) - 2.5 * sd(data$RT)#
+# And then we make sure that we include only the data in between the two borders:#
+data <- data[data$RT > outlier2,]#
+data <- data[data$RT < outlier1,]#
+# We could do a quick check to see if RTs have changed:#
+mean(data$RT)#
+#---------------------------------------------#
+PART TWO: Inspecting RT distributions across conditions#
+# The dataframe comprises 4 conditions. Conditions 1 and 2 are decisions #
+# about the color of the stimulus with congruent versus incongruent#
+# word meanings. Conditions 3 and 4 are decisions about the meanings of#
+# words with congruent versus incongruent stimulus colors.#
+# Let's isolate and label these conditions:#
+color_decisions_congr_meaning <- data[data$condition == 1,]#
+color_decisions_congr_meaning$condition <- 'congr meaning'#
+mean(color_decisions_congr_meaning$RT) # Just checking the means#
+color_decisions_incongr_meaning <- data[data$condition == 2,]#
+color_decisions_incongr_meaning$condition <- 'incongr meaning'#
+mean(color_decisions_incongr_meaning$RT) # Just checking the means#
+word_decisions_congr_color <- data[data$condition == 3,]#
+word_decisions_congr_color$condition <- 'congr color'#
+mean(word_decisions_congr_color$RT) # Just checking the means#
+word_decisions_incongr_color <- data[data$condition == 4,]#
+word_decisions_incongr_color$condition <- 'incongr color'#
+mean(word_decisions_incongr_color$RT) # Just checking the means#
+# And then, make two groups of conditions. We want to compare#
+# the two color conditions, and the two meaning decisions.#
+color_decisions <- rbind(color_decisions_congr_meaning,color_decisions_incongr_meaning)#
+word_decisions <- rbind(word_decisions_congr_color,word_decisions_incongr_color)#
+# And now we can make our density plots with the following line.#
+# Word decisions:#
+ggplot(word_decisions, aes(RT, fill = condition)) + geom_density(alpha = 0.2)#
+# Color decisions:#
+ggplot(color_decisions, aes(RT, fill = condition)) + geom_density(alpha = 0.2)
+setwd('/Users/huangfei/Downloads/ca')#
+# And then load in our datafile:#
+data <- read.csv('data_21_09.txt')
+setwd('/Users/huangfei/Downloads/ca')
+library(lme4) # This is the package that we need for using LMMs#
+# First, specify the path to the datafile:#
+# setwd('C://Users//Josh//Desktop//Josh work//Courses//Gastcolleges//LMM workshop')#
+data <- read.csv('workshop_data.txt')#
+# For the analysis of RTs, we want to exclude incorrectly answered trials:#
+data <- data[data$error == 0,]#
+# And we want to remove outliers:#
+outlier1 <- mean(data$RT) + 2.5 * sd(data$RT)#
+outlier2 <- mean(data$RT) - 2.5 * sd(data$RT)#
+data <- data[data$RT > outlier2,]#
+data <- data[data$RT < outlier1,]#
+#
+# We may have factors that we want to specify as such. In the matrix, our IV#
+# 'distractor' has values 0 and 1, for the no-distraction and distraction conditions,#
+# respectively. Let's just give labels "no" and "yes", respectively:#
+#
+data$session <- as.factor(data$session)#
+data$distractor <- factor(data$distractor,#
+labels=c("no","yes"))#
+#
+# We can choose reference levels for our factors of interest. #
+# We can then interpret all effects as differences from the reference#
+#
+data$distractor <- relevel(data$distractor, ref="no")#
+data$session <- relevel(data$session, ref="control")#
+#
+# Here is the code for running a very simple LMM with distractor as fixed effect,#
+# and by-subject and by-item intercepts as random effect#
+#
+model1 <- lmer(#
+    RT ~ distractor + (1|subject)+(1|item),#
+    data=data, )#
+# To read out the results, request a summary of the model#
+summary(model1)
+data
+clear
+cls
+library(lme4) # This is the package that we need for using LMMs#
+#
+# First, specify the path to the datafile:#
+setwd('/Users/huangfei/Downloads/Psychology Experiment')#
+data <- read.csv('work_data.csv')#
+#
+data <- na.omit(data)#
+#
+# And we want to remove outliers:#
+outlier1 <- mean(data$reading_time) + 2.5 * sd(data$reading_time)#
+outlier2 <- mean(data$reading_time) - 2.5 * sd(data$reading_time)#
+data <- data[data$reading_time > outlier2,]#
+data <- data[data$reading_time < outlier1,]#
+#
+# Transform the 'distractor' variable into a factor#
+data$paragraph_type <- as.factor(data$paragraph_type)#
+data$is_dyslexic <- as.factor(data$is_dyslexic)#
+#
+data$paragraph_type <- relevel(data$paragraph_type, ref="plain")#
+data$is_dyslexic <- relevel(data$is_dyslexic, ref="FALSE")#
+#
+Acc_model <- glmer(correct_response ~ paragraph_type * is_dyslexic + (1|subject), #
+                   data = data, family = "binomial")#
+#
+summary(Acc_model)
+library(lme4) # This is the package that we need for using LMMs#
+#
+# First, specify the path to the datafile:#
+setwd('/Users/huangfei/Downloads/Psychology Experiment')#
+data <- read.csv('work_data.csv')#
+#
+data <- na.omit(data)#
+#
+# Remove all rows with error = 0#
+data <- data[data$correct_response == 'TRUE',]#
+#
+# And we want to remove outliers:#
+outlier1 <- mean(data$reading_time) + 2.5 * sd(data$reading_time)#
+outlier2 <- mean(data$reading_time) - 2.5 * sd(data$reading_time)#
+data <- data[data$reading_time > outlier2,]#
+data <- data[data$reading_time < outlier1,]#
+#
+# Transform the 'distractor' variable into a factor#
+data$paragraph_type <- as.factor(data$paragraph_type)#
+data$is_dyslexic <- as.factor(data$is_dyslexic)#
+#
+data$paragraph_type <- relevel(data$paragraph_type, ref="plain")#
+data$is_dyslexic <- relevel(data$is_dyslexic, ref="FALSE")#
+#
+# 1. Analyzing Response Time with lmer#
+model1 <- lmer(reading_time ~ paragraph_type*is_dyslexic + (1+paragraph_type+is_dyslexic|subject), data = data,)#
+model2 <- lmer(reading_time ~ paragraph_type*is_dyslexic + (1|subject), data=data,)#
+#
+anova(model1, model2)#
+#
+summary(model1)
+library(lme4) # This is the package that we need for using LMMs#
+#
+# First, specify the path to the datafile:#
+setwd('/Users/huangfei/Downloads/Psychology Experiment')#
+data <- read.csv('work_data.csv')#
+#
+data <- na.omit(data)#
+#
+# And we want to remove outliers:#
+outlier1 <- mean(data$reading_time) + 2.5 * sd(data$reading_time)#
+outlier2 <- mean(data$reading_time) - 2.5 * sd(data$reading_time)#
+data <- data[data$reading_time > outlier2,]#
+data <- data[data$reading_time < outlier1,]#
+#
+# Transform the 'distractor' variable into a factor#
+data$paragraph_type <- as.factor(data$paragraph_type)#
+data$is_dyslexic <- as.factor(data$is_dyslexic)#
+#
+data$paragraph_type <- relevel(data$paragraph_type, ref="plain")#
+data$is_dyslexic <- relevel(data$is_dyslexic, ref="FALSE")#
+#
+Acc_model <- glmer(correct_response ~ paragraph_type * is_dyslexic + (1|subject), #
+                   data = data, family = "binomial")#
+#
+summary(Acc_model)
