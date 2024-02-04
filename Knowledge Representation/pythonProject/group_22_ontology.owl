@@ -1,0 +1,326 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3">
+    <Prefix name="" IRI="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Adana_Kebab"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Baklava"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Beef"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Chicken"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Coconut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Degree_of_Doneness"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Degree_of_Spiceness"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Dessert"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Dessert_Topping"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Doner_Kebab"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Flour_Tortilla"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Food"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Forest_Kebab"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Gluten_Free_Flour_Tortilla"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hazelnut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Helva"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Kebab"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Kunefe"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Lamb"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Liver_Kebab"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Meat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Medium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mildly_Spicy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Not_Spicy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Paper_Kebab"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pistachios"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pottery_Kebab"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Properties"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Rare"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Shish_Kebab"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tortilla"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Turkish_Delight"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Very_Spicy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Walnut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Well"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Woodfire_Oven_Kebab"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#degreeOfDonenes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTopping"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#spiciness"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Adana_Kebab"/>
+        <Class IRI="#Kebab"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Baklava"/>
+        <Class IRI="#Dessert"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Beef"/>
+        <Class IRI="#Meat"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Chicken"/>
+        <Class IRI="#Meat"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Coconut"/>
+        <Class IRI="#Dessert_Topping"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Degree_of_Doneness"/>
+        <Class IRI="#Properties"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Degree_of_Spiceness"/>
+        <Class IRI="#Properties"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dessert"/>
+        <Class IRI="#Food"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dessert"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasTopping"/>
+            <Class IRI="#Dessert_Topping"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dessert_Topping"/>
+        <Class IRI="#Food"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Doner_Kebab"/>
+        <Class IRI="#Kebab"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Flour_Tortilla"/>
+        <Class IRI="#Tortilla"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Forest_Kebab"/>
+        <Class IRI="#Kebab"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Gluten_Free_Flour_Tortilla"/>
+        <Class IRI="#Tortilla"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hazelnut"/>
+        <Class IRI="#Dessert_Topping"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Helva"/>
+        <Class IRI="#Dessert"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Kebab"/>
+        <Class IRI="#Food"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Kebab"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#spiciness"/>
+            <Class IRI="#Degree_of_Spiceness"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Kunefe"/>
+        <Class IRI="#Dessert"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Lamb"/>
+        <Class IRI="#Meat"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Liver_Kebab"/>
+        <Class IRI="#Kebab"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Meat"/>
+        <Class IRI="#Food"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Meat"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#degreeOfDonenes"/>
+            <Class IRI="#Degree_of_Doneness"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Medium"/>
+        <Class IRI="#Degree_of_Doneness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mildly_Spicy"/>
+        <Class IRI="#Degree_of_Spiceness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Not_Spicy"/>
+        <Class IRI="#Degree_of_Spiceness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Paper_Kebab"/>
+        <Class IRI="#Kebab"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pistachios"/>
+        <Class IRI="#Dessert_Topping"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pottery_Kebab"/>
+        <Class IRI="#Kebab"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Rare"/>
+        <Class IRI="#Degree_of_Doneness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Shish_Kebab"/>
+        <Class IRI="#Kebab"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tortilla"/>
+        <Class IRI="#Food"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Turkish_Delight"/>
+        <Class IRI="#Dessert"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Very_Spicy"/>
+        <Class IRI="#Degree_of_Spiceness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Walnut"/>
+        <Class IRI="#Dessert_Topping"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Well"/>
+        <Class IRI="#Degree_of_Doneness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Woodfire_Oven_Kebab"/>
+        <Class IRI="#Kebab"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Dessert"/>
+        <Class IRI="#Kebab"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Food"/>
+        <Class IRI="#Properties"/>
+    </DisjointClasses>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#degreeOfDonenes"/>
+        <Class IRI="#Meat"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTopping"/>
+        <Class IRI="#Dessert"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#spiciness"/>
+        <Class IRI="#Kebab"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#degreeOfDonenes"/>
+        <Class IRI="#Degree_of_Doneness"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTopping"/>
+        <Class IRI="#Dessert_Topping"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#spiciness"/>
+        <Class IRI="#Degree_of_Spiceness"/>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+

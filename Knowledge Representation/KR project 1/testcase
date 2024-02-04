@@ -1,0 +1,12 @@
+"Mushroom"
+
+
+∃hasTopping."ArtichokeTopping"
+⩽1hasTopping⁻.⊤
+⩽1hasBase.⊤
+⊤
+⩽1isToppingOf.⊤
+⩽1isBaseOf.⊤
+⩽1hasBase⁻.⊤
+⩽1isBaseOf⁻.⊤
+⩽1hasSpiciness.⊤

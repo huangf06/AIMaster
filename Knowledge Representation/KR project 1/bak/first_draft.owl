@@ -1,0 +1,339 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3/"
+     xml:base="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#degreeOfDonenes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#degreeOfDonenes">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Meat"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Degree_of_Doneness"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#hasTopping -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#hasTopping">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Dessert"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Dessert_Topping"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Adana_Kebab -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Adana_Kebab">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Kebab"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Baklava -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Baklava">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Dessert"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Beef -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Beef">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Meat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Chicken -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Chicken">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Meat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Coconut -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Coconut">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Dessert_Topping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Degree_of_Doneness -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Degree_of_Doneness">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Properties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Degree_of_Spiceness -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Degree_of_Spiceness">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Properties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Dessert -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Dessert">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Food"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Dessert_Topping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Dessert_Topping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Food"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Doner_Kebab -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Doner_Kebab">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Kebab"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Flour_Tortilla -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Flour_Tortilla">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Tortilla"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Food -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Food"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Forest_Kebab -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Forest_Kebab">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Kebab"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Gluten_Free_Flour_Tortilla -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Gluten_Free_Flour_Tortilla">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Tortilla"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Hazelnut -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Hazelnut">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Dessert_Topping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Helva -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Helva">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Dessert"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Kebab -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Kebab">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Food"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Kunefe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Kunefe">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Dessert"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Lamb -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Lamb">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Meat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Liver_Kebab -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Liver_Kebab">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Kebab"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Meat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Meat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Food"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Medium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Medium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Degree_of_Doneness"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Mildly_Spicy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Mildly_Spicy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Degree_of_Spiceness"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Not_Spicy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Not_Spicy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Degree_of_Spiceness"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Paper_Kebab -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Paper_Kebab">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Kebab"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Pistachios -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Pistachios">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Dessert_Topping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Pottery_Kebab -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Pottery_Kebab">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Kebab"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Properties -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Properties"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Rare -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Rare">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Degree_of_Doneness"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Shish_Kebab -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Shish_Kebab">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Kebab"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Tortilla -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Tortilla">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Food"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Turkish_Delight -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Turkish_Delight">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Dessert"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Very_Spicy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Very_Spicy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Degree_of_Spiceness"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Walnut -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Walnut">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Dessert_Topping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Well -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Well">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Degree_of_Doneness"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Woodfire_Oven_Kebab -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Woodfire_Oven_Kebab">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hserdary/ontologies/2023/10/untitled-ontology-3#Kebab"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+

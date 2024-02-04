@@ -1,0 +1,43 @@
+\documentclass[12pt]{article}
+
+\usepackage{graphicx} % Required for including images
+\usepackage{amsmath, amssymb} % For mathematical formatting
+\usepackage{geometry} % For page layout
+\geometry{a4paper, margin=1in}
+\usepackage{subcaption} % For subfigures
+\usepackage{booktabs} % For professional looking tables
+
+\title{Multi-Agent Systems HW6:\\Final Homework Assignment}
+\author{Fei Huang \\ Student ID: 2818760}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Part 1: Monte Carlo Simulation}
+
+\subsection*{Objective}
+The aim of this part of the report is 1) to identify the optimal batch size \( k \) for blood-borne virus testing that minimizes the expected number of tests required in a population; 2) to quantify the expected reduction in workload. This is achieved by employing a Monte Carlo simulation approach for various values of prevalence rate \( p \), spanning from \( 10^{-1} \) to \( 10^{-4} \), thereby optimizing the resource allocation and efficiency.
+
+\subsection*{Methodology}
+To estimate the optimal batch size, a Monte Carlo simulation is designed to model the testing process. Given a population size \( N = 1,000,000 \), a range of batch sizes \( k \), and various prevalence rates \( p \), we simulate the number of tests needed to identify all positive individuals. The simulation iterates over a series of batch sizes to determine which minimizes the number of tests per prevalence rate, averaged over multiple iterations to ensure statistical significance.
+
+\subsection*{Simulation Setup}
+A Python script utilizing NumPy libraries is developed to perform the simulations efficiently. The script iterates over a predetermined range of batch sizes and calculates the expected number of tests for each batch size. This process is repeated for several iterations to average out the stochastic variability and obtain a reliable estimate of the expected number of tests.
+
+\subsection*{Results and Analysis}
+The results indicate a clear inverse correlation between batch size and the number of tests, up to a critical point where the efficiency gains plateau and eventually decline. For each prevalence rate \( p \), there exists an optimal batch size \( k \) that minimizes the expected number of tests. This optimal point shifts depending on the prevalence, with lower \( p \) values favoring larger batch sizes.
+
+%% Placeholder for the figure with the plot
+%\begin{figure}[ht]
+%\centering
+%\includegraphics[width=\textwidth]{placeholder_for_optimal_k_plot.png}
+%\caption{Optimal batch size \( k \) as a function of prevalence rate \( p \). Each subplot represents a different \( p \) value, showing the average number of tests against batch size.}
+%\label{fig:optimal_k_plot}
+%\end{figure}
+
+\subsection*{Conclusion}
+The Monte Carlo simulation has provided a quantitative basis for determining the optimal batch size for virus testing across different prevalence rates. By applying this optimal batch size in practical scenarios, health organizations can reduce the number of tests required, thereby conserving resources and enabling more efficient pandemic responses.
+
+\end{document}
